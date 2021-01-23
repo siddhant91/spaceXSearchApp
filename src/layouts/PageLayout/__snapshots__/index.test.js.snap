@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="spacex-page-layout"
+  >
+    <header
+      class="spacex-page-layout__header d-flex align-items-center w-100"
+    >
+      <h1
+        class="spacex-page-layout__header--title"
+      >
+        Some title
+      </h1>
+    </header>
+    <main
+      class="spacex-page-layout__content"
+    >
+      <p>
+        this is child node text
+      </p>
+    </main>
+    <footer
+      class="spacex-page-layout__footer w-100 d-flex justify-content-center align-items-center"
+    >
+      <strong>
+        Developed by:
+      </strong>
+       Some Dev Name
+    </footer>
+  </div>
+</DocumentFragment>
+`;

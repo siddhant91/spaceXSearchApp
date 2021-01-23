@@ -1,9 +1,8 @@
 /**
- * Page Layout Component which renders the entire page  with header,left navigation menu and the main Content
+ * Page Layout Component which renders the entire page  with header,footer and the main Content
  */
 import clsx from 'clsx';
 import { string, node } from 'prop-types';
-//  import { useState } from 'react';
 
 // Styles
 import './styles.scss';

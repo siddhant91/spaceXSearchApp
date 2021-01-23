@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="spacex-filter-list"
+  >
+    <div
+      class="spacex-filter-list--title"
+    >
+      <h3>
+        Successful Landing
+      </h3>
+    </div>
+    <div
+      class="d-flex flex-wrap justify-content-between spacex-filter-list--items"
+      data-testid="filter-list-container"
+    >
+      <button
+        aria-label="True"
+        class="spacex-button-component"
+        data-testid="filter-button"
+        data-value="true"
+        type="button"
+      >
+        True
+      </button>
+      <button
+        aria-label="False"
+        class="spacex-button-component"
+        data-testid="filter-button"
+        data-value="false"
+        type="button"
+      >
+        False
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;

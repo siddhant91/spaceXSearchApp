@@ -2,6 +2,7 @@ import { arrayOf, string, shape, oneOfType, bool, number, func } from 'prop-type
 
 // Components
 import Button from '../Button';
+
 // Styles
 import './styles.scss';
 
@@ -31,6 +32,7 @@ const FilterList = ({
 						isSelected={isSelected}
 						key={`${filterKey}-${value}`}
 						aria-label={text}
+						data-testid="filter-button"
 					>
 						{text}
 					</Button>
@@ -46,7 +48,10 @@ const FilterList = ({
 			<div className="spacex-filter-list--title">
 				<h3>{filterTitle}</h3>
 			</div>
-			<div className="d-flex flex-wrap justify-content-between spacex-filter-list--items">
+			<div
+				className="d-flex flex-wrap justify-content-between spacex-filter-list--items"
+				data-testid="filter-list-container"
+			>
 				{getFilters()}
 			</div>
 		</div>

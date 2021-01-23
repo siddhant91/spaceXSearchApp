@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="spacex-shuttle-card"
+    data-testid="shuttle-card"
+  >
+    <div
+      class="spacex-shuttle-card__image d-flex justify-content-center"
+    >
+      <img
+        alt="FalconSat"
+        src="https://images2.imgbox.com/3c/0e/T8iJcSN3_o.png"
+      />
+    </div>
+    <h3
+      class="spacex-shuttle-card__name"
+    >
+      FalconSat
+    </h3>
+    <div
+      class="spacex-shuttle-card__mission-id"
+    >
+      <strong>
+        Mission Ids:
+      </strong>
+      <ul>
+        <li>
+          1234
+        </li>
+      </ul>
+    </div>
+    <div
+      class="spacex-shuttle-card__details"
+    >
+      <strong>
+        Launch Year:
+      </strong>
+      <span>
+        2006
+      </span>
+    </div>
+    <div
+      class="spacex-shuttle-card__details"
+    >
+      <strong>
+        Successful Launch:
+      </strong>
+      <span>
+        false
+      </span>
+    </div>
+    <div
+      class="spacex-shuttle-card__details"
+    >
+      <strong>
+        Successful Landing:
+      </strong>
+      <span>
+        false
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;

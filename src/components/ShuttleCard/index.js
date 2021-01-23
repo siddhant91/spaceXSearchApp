@@ -16,7 +16,9 @@ function ShuttleCard({ shuttleData }) {
 		return (
 			<div className="spacex-shuttle-card__mission-id">
 				<strong>Mission Ids:</strong>
-				<ul>{missionIds && missionIds.length > 0 && missionIds.map((id) => <li>{id}</li>)}</ul>
+				<ul>
+					{missionIds && missionIds.length > 0 && missionIds.map((id) => <li key={id}>{id}</li>)}
+				</ul>
 			</div>
 		);
 	};
@@ -30,7 +32,11 @@ function ShuttleCard({ shuttleData }) {
 		);
 	};
 	return (
-		<div className="spacex-shuttle-card" key={`${missionName}-${launchYear}`}>
+		<div
+			className="spacex-shuttle-card"
+			key={`${missionName}-${launchYear}`}
+			data-testid="shuttle-card"
+		>
 			<div className="spacex-shuttle-card__image d-flex justify-content-center">
 				<img src={missionPatchImage} alt={missionName} />
 			</div>
