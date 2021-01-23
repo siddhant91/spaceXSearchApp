@@ -5,7 +5,13 @@ import Button from '../Button';
 // Styles
 import './styles.scss';
 
-const FilterList = ({ filterTitle, filterList, filterKey, updateFilterList }) => {
+const FilterList = ({
+	filterTitle,
+	filterList,
+	filterKey,
+	updateFilterList,
+	selectedFiltersList,
+}) => {
 	const handleFilterClick = (e) => {
 		const { value } = e.target.dataset;
 		updateFilterList({
@@ -16,7 +22,8 @@ const FilterList = ({ filterTitle, filterList, filterKey, updateFilterList }) =>
 	const getFilters = () => {
 		if (filterList.length) {
 			const filters = filterList.map((filter) => {
-				const { text, isSelected, value } = filter;
+				const { text, value } = filter;
+				const isSelected = selectedFiltersList.indexOf(value.toString()) > -1;
 				return (
 					<Button
 						handleClick={handleFilterClick}
@@ -57,8 +64,11 @@ FilterList.propTypes = {
 	).isRequired,
 	updateFilterList: func.isRequired,
 	filterKey: string.isRequired,
+	selectedFiltersList: arrayOf(string),
 };
 
-FilterList.defaultProps = {};
+FilterList.defaultProps = {
+	selectedFiltersList: [],
+};
 
 export default FilterList;

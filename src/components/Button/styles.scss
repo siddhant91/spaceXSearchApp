@@ -3,12 +3,20 @@
 	border-radius: $spacex-spacing-1;
 	border: none;
 	padding: $spacex-spacing-2;
-	font-size: $spacex-body-font-size-medium;
-	font-weight: $spacex-font-weight-bold;
 	cursor: pointer;
 	background-color: $spacex-color-secondary-green;
+	outline: none;
 	height: 35px;
 	width: 100px;
 	margin: $spacex-spacing-2 $spacex-spacing-3;
-	outline: none;
+	font-size: $spacex-body-font-size-medium;
+	@media only screen and (min-width: $spacex-breakpoint-mobile) and (max-width: $spacex-breakpoint-x-large) {
+		height: $spacex-spacing-6;
+		width: $spacex-spacing-8;
+		font-size: $spacex-body-font-size;
+		margin: 5px;
+	}
+	&.selected {
+		background-color: $spacex-color-primary-green;
+	}
 }

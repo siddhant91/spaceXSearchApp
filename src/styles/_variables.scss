@@ -59,7 +59,10 @@ h3,
 .h3 {
 	margin: 0;
 	font-weight: $spacex-font-weight-bold;
-	font-size: $spacex-h3-font-size;
+	font-size: $spacex-body-font-size;
+	@media only screen and (min-width: $spacex-breakpoint-desktop) {
+		font-size: $spacex-h3-font-size;
+	}
 }
 
 .body {

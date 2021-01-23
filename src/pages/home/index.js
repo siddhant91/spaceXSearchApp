@@ -31,14 +31,36 @@ const Home = () => {
 	const [launchSuccessFilter] = useState(successFilterConfig);
 	const [landingSuccessFilter] = useState(successFilterConfig);
 	const [shuttleLists, setShuttleLists] = useState([]);
-	const [selectedFilters] = useState({});
+	const [selectedFilters, setSelectecFilters] = useState({
+		launch_year: [],
+		launch_success: [],
+		landing_success: [],
+	});
 	const [loaderVisible, setLoaderVisible] = useContext(AppContext);
-	console.log(selectedFilters);
-	console.log(shuttleLists);
-
 	const updateFilterList = ({ filterKey, value }) => {
-		console.log(filterKey);
-		console.log(value);
+		const selectedFilter = selectedFilters[filterKey];
+		if (selectedFilter.length) {
+			const selectedValueIndex = selectedFilter.indexOf(value);
+			// remove the value from the filter list if already selcted
+			if (selectedValueIndex > -1) {
+				selectedFilter.splice(selectedValueIndex, 1);
+			} else {
+				selectedFilter.push(value);
+			}
+			setSelectecFilters((prevState) => {
+				return {
+					...prevState,
+					[filterKey]: [...selectedFilter],
+				};
+			});
+		} else {
+			setSelectecFilters((prevState) => {
+				return {
+					...prevState,
+					[filterKey]: [value],
+				};
+			});
+		}
 	};
 
 	const getShuttleLists = async () => {
@@ -48,13 +70,15 @@ const Home = () => {
 				url: '',
 				params: {
 					limit: 100,
+					...selectedFilters,
 				},
 			});
-			console.log(result);
 			const { responseData = [] } = result;
 			if (responseData.length) {
 				const tranformedData = transformShuttleData(responseData);
 				setShuttleLists(tranformedData);
+			} else {
+				setShuttleLists([]);
 			}
 			setLoaderVisible(false);
 		} catch (e) {
@@ -77,27 +101,30 @@ const Home = () => {
 		getShuttleLists();
 	}, [selectedFilters]);
 	return (
-		<div className="spacex-homepage d-flex w-100 flex-wrap">
+		<div className="spacex-homepage d-flex w-100 flex-column flex-sm-row flex-wrap">
 			{loaderVisible && <Loader />}
 			<div className="spacex-homepage__filters">
 				<h2>Filters</h2>
 				<FilterList
 					filterTitle="Launch Year"
-					filterKey="launchYear"
+					filterKey="launch_year"
 					filterList={yearFilter}
 					updateFilterList={updateFilterList}
+					selectedFiltersList={selectedFilters.launch_year}
 				/>
 				<FilterList
 					filterTitle="Successful Launch"
-					filterKey="launchSuccess"
+					filterKey="launch_success"
 					filterList={launchSuccessFilter}
 					updateFilterList={updateFilterList}
+					selectedFiltersList={selectedFilters.launch_success}
 				/>
 				<FilterList
 					filterTitle="Successful Landing"
-					filterKey="landingSuccess"
+					filterKey="landing_success"
 					filterList={landingSuccessFilter}
 					updateFilterList={updateFilterList}
+					selectedFiltersList={selectedFilters.landing_success}
 				/>
 			</div>
 			<div className="spacex-homepage--cards d-flex flex-wrap">{getShuttleCards()}</div>

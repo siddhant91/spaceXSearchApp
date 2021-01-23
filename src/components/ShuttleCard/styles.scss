@@ -2,12 +2,24 @@
 .spacex-shuttle-card {
 	background-color: $spacex-color-white;
 	@include padding($spacex-spacing-3, $spacex-spacing-3, $spacex-spacing-3, $spacex-spacing-3);
-	@include margin(0, $spacex-spacing-2, $spacex-spacing-2, 0);
+	width: 100%;
+	@include margin($spacex-spacing-2);
+	@media only screen and (min-width: $spacex-breakpoint-tablet) {
+		@include margin(0, $spacex-spacing-2, $spacex-spacing-2, 0);
+		width: 48%;
+	}
+	@media only screen and (min-width: $spacex-breakpoint-x-large) {
+		@include margin(0, $spacex-spacing-2, $spacex-spacing-2, 0);
+		width: auto;
+	}
 	border-radius: $spacex-spacing-1;
+	height: fit-content;
 	&__image {
 		background-color: $spacex-background-grey;
-		width: 256px;
-		height: 256px;
+		// @media only screen and (min-width: $spacex-breakpoint-tablet) {
+		// 	width: 256px;
+		// 	height: 256px;
+		// }
 	}
 	&__name {
 		color: $spacex-color-primary-green;

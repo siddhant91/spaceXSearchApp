@@ -1,14 +1,19 @@
 @import '../../styles/main.scss';
 
 .spacex-filter-list {
-	@include padding($spacex-spacing-3, $spacex-spacing-3, $spacex-spacing-3, $spacex-spacing-3);
+	@media only screen and (min-width: $spacex-breakpoint-x-large) {
+		@include padding($spacex-spacing-3, $spacex-spacing-3, $spacex-spacing-3, $spacex-spacing-3);
+	}
 	&--title {
 		@include padding(0, 0, $spacex-spacing-1);
 		border-bottom: 1px solid $spacex-color-black;
-		@include margin(0, $spacex-spacing-5, 0, $spacex-spacing-5);
+		@include margin($spacex-spacing-2);
 		text-align: center;
+		@media only screen and (min-width: $spacex-breakpoint-x-large) {
+			@include margin($spacex-spacing-2, $spacex-spacing-5, 0, $spacex-spacing-5);
+		}
 	}
 	&--items {
-		@include margin($spacex-spacing-3);
+		@include margin($spacex-spacing-3, 0, $spacex-spacing-3, 0);
 	}
 }

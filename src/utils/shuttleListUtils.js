@@ -13,8 +13,8 @@ const transformShuttleData = (shuttleData) => {
 			return {
 				missionIds,
 				missionName,
-				launch_landing: launchLanding.toString(),
-				launch_success: launchSuccess.toString(),
+				launchLanding: launchLanding.toString(),
+				launchSuccess: launchSuccess.toString(),
 				launchYear,
 				missionPatchImage,
 			};
