@@ -1,0 +1,9 @@
+@import '../../styles/main.scss';
+
+.spacex-footer {
+	position: fixed;
+	bottom: 0;
+	background-color: $spacex-background-grey;
+	z-index: 1;
+	height: $spacex-spacing-5;
+}

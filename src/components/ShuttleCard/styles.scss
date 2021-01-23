@@ -1,0 +1,19 @@
+@import '../../styles/main.scss';
+.spacex-shuttle-card {
+	background-color: $spacex-color-white;
+	@include padding($spacex-spacing-3, $spacex-spacing-3, $spacex-spacing-3, $spacex-spacing-3);
+	@include margin(0, $spacex-spacing-2, $spacex-spacing-2, 0);
+	border-radius: $spacex-spacing-1;
+	&__image {
+		background-color: $spacex-background-grey;
+		width: 256px;
+		height: 256px;
+	}
+	&__name {
+		color: $spacex-color-primary-green;
+		@include margin($spacex-spacing-3, 0, $spacex-spacing-3, 0);
+	}
+	&__details {
+		@include margin($spacex-spacing-2, 0, $spacex-spacing-3, 0);
+	}
+}

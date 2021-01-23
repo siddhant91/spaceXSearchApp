@@ -1,6 +1,16 @@
-@import './reset.scss';
+//  @import './reset.scss';
 @import './_colors.scss';
 @import './_spacing.scss';
 @import './_breakpoints.scss';
-@import './Typography/fonts';
+//  @import './Typography/fonts';
 @import './_variables.scss';
+@import './_generic.scss';
+@import './_mixins.scss';
+
+body {
+	background-color: $spacex-background-grey;
+}
+
+strong {
+	font-weight: $spacex-font-weight-bold;
+}

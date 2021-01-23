@@ -3,13 +3,21 @@
  * If Any routing is applicable have the routes file added here than Components directly
  */
 // Components
+import PageLayout from './layouts/PageLayout';
 import Home from './pages/home';
+
+// Providers
+import { AppProvider } from './contexts/AppContext';
 
 function App() {
 	return (
-		<div className="App">
-			<Home />
-		</div>
+		<AppProvider>
+			<div className="spacex-app">
+				<PageLayout title="SpaceX Launch Programs" devName="Siddhant Wadhera">
+					<Home />
+				</PageLayout>
+			</div>
+		</AppProvider>
 	);
 }
 

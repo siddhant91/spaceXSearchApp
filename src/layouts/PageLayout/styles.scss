@@ -1,0 +1,25 @@
+@import '../../styles/main.scss';
+
+.spacex-page-layout {
+	box-sizing: border-box;
+	@include padding($spacex-spacing-3, $spacex-spacing-3, $spacex-spacing-3, $spacex-spacing-3);
+	&__header {
+		position: fixed;
+		top: 0;
+		background-color: $spacex-background-grey;
+		z-index: 1;
+		height: $spacex-spacing-8;
+		&--tile {
+			@include margin($spacex-spacing-2, 0, $spacex-spacing-2, 0);
+		}
+	}
+	&__footer {
+		position: fixed;
+		bottom: 0;
+		height: $spacex-spacing-5;
+		background-color: $spacex-background-grey;
+	}
+	&__content {
+		@include margin($spacex-spacing-8);
+	}
+}

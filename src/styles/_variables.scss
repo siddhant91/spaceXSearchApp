@@ -1,7 +1,3 @@
-$spacex-font-family-heading: 'OpenSans' !default;
-$spacex-font-family-secondary: 'OpenSans' !default;
-$spacex-font-family-body: $spacex-font-family-secondary !default;
-
 // Font weights
 $spacex-font-weight-lighter: lighter !default;
 $spacex-font-weight-light: 300 !default;
@@ -13,10 +9,9 @@ $spacex-font-weight-bolder: bolder !default;
 
 // 1rem = 16px
 
-$spacex-h1-font-size: 2.75rem; // 44px
-$spacex-h2-font-size: 2.125rem; // 34px
-$spacex-h3-font-size: 1.75rem; // 28px
-$spacex-h4-font-size: 1rem; // 16px
+$spacex-h1-font-size: 2.125rem; // 34px
+$spacex-h2-font-size: 1.5rem; // 28px
+$spacex-h3-font-size: 1rem; // 16px
 
 // Body
 $spacex-body-font-size-xlarge: 1.5rem; // 24px
@@ -39,8 +34,11 @@ body {
 	margin: 0;
 	font-weight: $spacex-font-weight-normal;
 	font-size: $spacex-body-font-size;
-	font-family: $spacex-font-family-body;
 	color: $spacex-color-black;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+		'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 h1,
@@ -48,8 +46,6 @@ h1,
 	margin: 0;
 	font-size: $spacex-h1-font-size;
 	font-weight: $spacex-font-weight-semi-bold;
-	font-family: $spacex-font-family-heading;
-	line-height: 0.7;
 }
 
 h2,
@@ -57,25 +53,13 @@ h2,
 	margin: 0;
 	font-weight: $spacex-font-weight-semi-bold;
 	font-size: $spacex-h2-font-size;
-	font-family: $spacex-font-family-heading;
-	line-height: 0.7;
 }
 
 h3,
 .h3 {
 	margin: 0;
-	font-weight: $spacex-font-weight-semi-bold;
+	font-weight: $spacex-font-weight-bold;
 	font-size: $spacex-h3-font-size;
-	font-family: $spacex-font-family-heading;
-	line-height: 0.7;
-}
-
-h4,
-.h4 {
-	margin: 0;
-	font-size: $spacex-h4-font-size;
-	font-family: $spacex-font-family-heading;
-	line-height: 1;
 }
 
 .body {
