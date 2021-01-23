@@ -1,0 +1,9 @@
+@import '../../styles/main.scss';
+
+.spacex-homepage {
+	&--content {
+		&__main {
+			margin-top: $spacex-spacing-5;
+		}
+	}
+}

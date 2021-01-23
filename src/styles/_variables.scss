@@ -1,0 +1,101 @@
+$spacex-font-family-heading: 'OpenSans' !default;
+$spacex-font-family-secondary: 'OpenSans' !default;
+$spacex-font-family-body: $spacex-font-family-secondary !default;
+
+// Font weights
+$spacex-font-weight-lighter: lighter !default;
+$spacex-font-weight-light: 300 !default;
+$spacex-font-weight-normal: 300 !default;
+$spacex-font-weight-medium: 400 !default;
+$spacex-font-weight-semi-bold: 600 !default;
+$spacex-font-weight-bold: 700 !default;
+$spacex-font-weight-bolder: bolder !default;
+
+// 1rem = 16px
+
+$spacex-h1-font-size: 2.75rem; // 44px
+$spacex-h2-font-size: 2.125rem; // 34px
+$spacex-h3-font-size: 1.75rem; // 28px
+$spacex-h4-font-size: 1rem; // 16px
+
+// Body
+$spacex-body-font-size-xlarge: 1.5rem; // 24px
+$spacex-body-font-size-large: 1.25rem; // 20px
+$spacex-body-font-size-medium: 1rem; // 16px
+$spacex-body-font-size: 0.875rem; // 14px
+$spacex-body-font-size-small: 0.75rem; // 12px
+
+// Other font-Sizes:
+$spacex-font-size-15: 0.9375rem; // 15px
+$spacex-font-size-18: 1.125rem; // 18px
+$spacex-font-size-22: 1.375rem; // 22px;
+
+html {
+	color: $spacex-color-black;
+	font-size: 100%;
+}
+
+body {
+	margin: 0;
+	font-weight: $spacex-font-weight-normal;
+	font-size: $spacex-body-font-size;
+	font-family: $spacex-font-family-body;
+	color: $spacex-color-black;
+}
+
+h1,
+.h1 {
+	margin: 0;
+	font-size: $spacex-h1-font-size;
+	font-weight: $spacex-font-weight-semi-bold;
+	font-family: $spacex-font-family-heading;
+	line-height: 0.7;
+}
+
+h2,
+.h2 {
+	margin: 0;
+	font-weight: $spacex-font-weight-semi-bold;
+	font-size: $spacex-h2-font-size;
+	font-family: $spacex-font-family-heading;
+	line-height: 0.7;
+}
+
+h3,
+.h3 {
+	margin: 0;
+	font-weight: $spacex-font-weight-semi-bold;
+	font-size: $spacex-h3-font-size;
+	font-family: $spacex-font-family-heading;
+	line-height: 0.7;
+}
+
+h4,
+.h4 {
+	margin: 0;
+	font-size: $spacex-h4-font-size;
+	font-family: $spacex-font-family-heading;
+	line-height: 1;
+}
+
+.body {
+	&-xlarge {
+		font-weight: $spacex-font-weight-normal;
+		font-size: $spacex-body-font-size-xlarge;
+		line-height: 1.875rem;
+	}
+	&-large {
+		font-weight: $spacex-font-weight-normal;
+		font-size: $spacex-body-font-size-large;
+		line-height: 1.625rem;
+	}
+	&-medium {
+		font-weight: $spacex-font-weight-normal;
+		font-size: $spacex-body-font-size-medium;
+		line-height: 1.375rem;
+	}
+	&-small {
+		font-size: $spacex-body-font-size-small;
+		line-height: 1.125rem;
+	}
+}

@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+/**
+ * Root Entry of the Application , Wrap the  child components with App level providers here
+ * If Any routing is applicable have the routes file added here than Components directly
+ */
+// Components
+import Home from './pages/home';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className="App">
+			<Home />
+		</div>
+	);
 }
 
 export default App;
