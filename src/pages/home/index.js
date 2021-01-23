@@ -1,5 +1,5 @@
 /**
- * Landing Page of the Books List Application
+ * Landing Page of the SpaceX Search Application
  * Sets the App Level by making an Api Call
  */
 

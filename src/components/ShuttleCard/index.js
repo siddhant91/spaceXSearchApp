@@ -30,7 +30,7 @@ function ShuttleCard({ shuttleData }) {
 		);
 	};
 	return (
-		<div className="spacex-shuttle-card">
+		<div className="spacex-shuttle-card" key={`${missionName}-${launchYear}`}>
 			<div className="spacex-shuttle-card__image d-flex justify-content-center">
 				<img src={missionPatchImage} alt={missionName} />
 			</div>
