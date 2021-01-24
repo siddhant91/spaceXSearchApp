@@ -1,3 +1,8 @@
+/**
+ * Method to transform the recieved the data from the api , as expected by the Components
+ * @param {*} shuttleData
+ * returns [{}] -- Array
+ */
 const transformShuttleData = (shuttleData) => {
 	let transFormedData = [];
 	if (shuttleData.length) {

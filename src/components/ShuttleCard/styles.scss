@@ -1,6 +1,8 @@
 @import '../../styles/main.scss';
 .spacex-shuttle-card {
 	background-color: $spacex-color-white;
+	min-height: 500px;
+	height: fit-content;
 	@include padding($spacex-spacing-3, $spacex-spacing-3, $spacex-spacing-3, $spacex-spacing-3);
 	width: 100%;
 	@include margin($spacex-spacing-2);

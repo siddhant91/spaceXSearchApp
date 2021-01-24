@@ -1,3 +1,8 @@
+/**
+ * Filter List Common Component
+ * this will render the different filters
+ */
+
 import { arrayOf, string, shape, oneOfType, bool, number, func } from 'prop-types';
 
 // Components
@@ -13,6 +18,11 @@ const FilterList = ({
 	updateFilterList,
 	selectedFiltersList,
 }) => {
+	/**
+	 * Click event handler of individual filter
+	 * passes the filterkey and the value of the filter item clicked to the parent component handler
+	 * @param {*} e
+	 */
 	const handleFilterClick = (e) => {
 		const { value } = e.target.dataset;
 		updateFilterList({
@@ -20,7 +30,11 @@ const FilterList = ({
 			value,
 		});
 	};
-	const getFilters = () => {
+
+	/**
+	 * Method to render all the filter items
+	 */
+	const renderFilterItems = () => {
 		if (filterList.length) {
 			const filters = filterList.map((filter) => {
 				const { text, value } = filter;
@@ -52,7 +66,7 @@ const FilterList = ({
 				className="d-flex flex-wrap justify-content-between spacex-filter-list--items"
 				data-testid="filter-list-container"
 			>
-				{getFilters()}
+				{renderFilterItems()}
 			</div>
 		</div>
 	);
