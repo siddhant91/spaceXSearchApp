@@ -1,3 +1,8 @@
+/**
+ * ShuttleCard Component
+ * this will render the individual card
+ */
+
 import { arrayOf, shape, string } from 'prop-types';
 
 // Styles
@@ -12,6 +17,11 @@ function ShuttleCard({ shuttleData }) {
 		launchYear,
 		missionPatchImage,
 	} = shuttleData;
+
+	/**
+	 * Method too render the mission Id's via looping over missionIds array
+	 * returns HTML
+	 */
 	const renderMissionIds = () => {
 		return (
 			<div className="spacex-shuttle-card__mission-id">
@@ -23,7 +33,12 @@ function ShuttleCard({ shuttleData }) {
 		);
 	};
 
-	const getOtherDetails = ({ label, value }) => {
+	/**
+	 * Common method to render details such as launch year , launch success , landing success
+	 * @param {*} { label, value }
+	 * returns HTML
+	 */
+	const renderOtherDetails = ({ label, value }) => {
 		return (
 			<div className="spacex-shuttle-card__details">
 				<strong>{label}</strong>
@@ -42,9 +57,9 @@ function ShuttleCard({ shuttleData }) {
 			</div>
 			<h3 className="spacex-shuttle-card__name">{missionName}</h3>
 			{renderMissionIds()}
-			{getOtherDetails({ label: 'Launch Year:', value: launchYear })}
-			{getOtherDetails({ label: 'Successful Launch:', value: launchSuccess })}
-			{getOtherDetails({ label: 'Successful Landing:', value: launchLanding })}
+			{renderOtherDetails({ label: 'Launch Year:', value: launchYear })}
+			{renderOtherDetails({ label: 'Successful Launch:', value: launchSuccess })}
+			{renderOtherDetails({ label: 'Successful Landing:', value: launchLanding })}
 		</div>
 	);
 }

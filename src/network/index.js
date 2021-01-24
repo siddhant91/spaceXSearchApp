@@ -99,7 +99,6 @@ export default class NetworkUtils {
 		} = requestObject;
 
 		const { serverBaseUrl } = this.networkParams;
-		console.log(process);
 		/* eslint-disable consistent-return */
 		return new Promise((resolve, reject) => {
 			try {

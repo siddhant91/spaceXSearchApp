@@ -1,6 +1,6 @@
 /**
  * Landing Page of the SpaceX Search Application
- * Sets the App Level by making an Api Call
+ * Sets the App Level Data by making an Api Call
  */
 
 import { useState, useEffect, useContext } from 'react';
@@ -37,6 +37,11 @@ const Home = () => {
 		landing_success: [],
 	});
 	const [loaderVisible, setLoaderVisible] = useContext(AppContext);
+
+	/**
+	 * Method to update the selectedFilters based on the user interaction with filter CTA's
+	 * @param {*} { filterKey, value }
+	 */
 	const updateFilterList = ({ filterKey, value }) => {
 		const selectedFilter = selectedFilters[filterKey];
 		if (selectedFilter.length) {
@@ -63,6 +68,9 @@ const Home = () => {
 		}
 	};
 
+	/**
+	 * Method to make an api call to get the data based on the applied filter or the base api call with limit of 100
+	 */
 	const getShuttleLists = async () => {
 		try {
 			setLoaderVisible(true);
@@ -88,7 +96,10 @@ const Home = () => {
 		}
 	};
 
-	const getShuttleCards = () => {
+	/**
+	 * Method to render the Shuttle Cards
+	 */
+	const renderShuttleCards = () => {
 		if (shuttleLists.length) {
 			const shuttleCards = shuttleLists.map((data) => {
 				return <ShuttleCard shuttleData={data} />;
@@ -97,9 +108,14 @@ const Home = () => {
 		}
 		return <p>No Cards available</p>;
 	};
+
+	/**
+	 * useEffect to fire the api call based on the filter selection or on the first mount
+	 */
 	useEffect(() => {
 		getShuttleLists();
 	}, [selectedFilters]);
+
 	return (
 		<div className="spacex-homepage d-flex w-100 flex-column flex-sm-row flex-wrap">
 			{loaderVisible && <Loader />}
@@ -127,7 +143,7 @@ const Home = () => {
 					selectedFiltersList={selectedFilters.landing_success}
 				/>
 			</div>
-			<div className="spacex-homepage--cards d-flex flex-wrap">{getShuttleCards()}</div>
+			<div className="spacex-homepage--cards d-flex flex-wrap">{renderShuttleCards()}</div>
 		</div>
 	);
 };
