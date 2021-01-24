@@ -29,7 +29,8 @@
     "dev:build-server": "NODE_ENV=development webpack --config webpack.server.js --mode=development -w",
     "dev:start": "nodemon ./server-build/index.js",
     "dev": "npm-run-all --parallel build dev:*",
-    "heroku-postbuild": "yarn run dev"
+    "dev:deploy": "npm-run-all --parallel build dev:build-server",
+    "heroku-postbuild": "yarn run dev:deploy"
   },
   "eslintConfig": {
     "extends": [
