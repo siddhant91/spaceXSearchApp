@@ -4,5 +4,6 @@
 export default {
 	baseUrl: {
 		default: 'https://api.spacexdata.com/v3/launches',
+		dev: 'https://api.spacexdata.com/v3/launches',
 	},
 };
