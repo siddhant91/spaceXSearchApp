@@ -53,7 +53,11 @@ function ShuttleCard({ shuttleData }) {
 			data-testid="shuttle-card"
 		>
 			<div className="spacex-shuttle-card__image d-flex justify-content-center">
-				<img src={missionPatchImage} alt={missionName} />
+				<img
+					className="spacex-shuttle-card__image--img"
+					src={missionPatchImage}
+					alt={missionName}
+				/>
 			</div>
 			<h3 className="spacex-shuttle-card__name">{missionName}</h3>
 			{renderMissionIds()}

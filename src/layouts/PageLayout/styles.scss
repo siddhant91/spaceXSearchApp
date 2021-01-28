@@ -2,7 +2,11 @@
 
 .spacex-page-layout {
 	box-sizing: border-box;
-	@include padding($spacex-spacing-3, $spacex-spacing-3, $spacex-spacing-3, $spacex-spacing-3);
+	@include padding($spacex-spacing-2, $spacex-spacing-2, $spacex-spacing-2, $spacex-spacing-2);
+	@media only screen and (min-width: $spacex-breakpoint-x-large) {
+		max-width: 1440px;
+		margin: 0 auto;
+	}
 	&__header {
 		position: fixed;
 		top: 0;
@@ -17,12 +21,15 @@
 		}
 	}
 	&__footer {
-		position: fixed;
+		position: sticky;
 		bottom: 0;
 		height: $spacex-spacing-5;
 		background-color: $spacex-background-grey;
 	}
 	&__content {
-		@include margin($spacex-spacing-8);
+		@include margin($spacex-spacing-11);
+		@media only screen and (min-width: $spacex-breakpoint-tablet) {
+			@include margin($spacex-spacing-8);
+		}
 	}
 }

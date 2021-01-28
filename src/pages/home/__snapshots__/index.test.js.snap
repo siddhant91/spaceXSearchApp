@@ -3,7 +3,7 @@
 exports[`Matches snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="spacex-homepage d-flex w-100 flex-column flex-sm-row flex-wrap"
+    class="spacex-homepage d-flex w-100 flex-column flex-sm-row"
   >
     <div
       class="spacex-loader spacex-loader--wrapper"

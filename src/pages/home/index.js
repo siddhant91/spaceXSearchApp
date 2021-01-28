@@ -117,7 +117,7 @@ const Home = () => {
 	}, [selectedFilters]);
 
 	return (
-		<div className="spacex-homepage d-flex w-100 flex-column flex-sm-row flex-wrap">
+		<div className="spacex-homepage d-flex w-100 flex-column flex-sm-row">
 			{loaderVisible && <Loader />}
 			<div className="spacex-homepage__filters">
 				<h2>Filters</h2>

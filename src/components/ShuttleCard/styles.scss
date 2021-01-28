@@ -10,16 +10,19 @@
 		@include margin(0, $spacex-spacing-2, $spacex-spacing-2, 0);
 		width: 48%;
 	}
-	@media only screen and (min-width: $spacex-breakpoint-x-large) {
+	@media only screen and (min-width: $spacex-breakpoint-desktop) {
 		@include margin(0, $spacex-spacing-2, $spacex-spacing-2, 0);
-		width: auto;
+		width: 24%;
+		&:nth-child(4n) {
+			margin-right: 0;
+		}
 	}
 	border-radius: $spacex-spacing-1;
 	&__image {
 		background-color: $spacex-background-grey;
-		@media only screen and (min-width: $spacex-breakpoint-x-large) {
-			width: 256px;
-			height: 256px;
+		&--img {
+			height: 40%;
+			width: 80%;
 		}
 	}
 	&__name {

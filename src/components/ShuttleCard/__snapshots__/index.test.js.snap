@@ -11,6 +11,7 @@ exports[`Matches snapshot 1`] = `
     >
       <img
         alt="FalconSat"
+        class="spacex-shuttle-card__image--img"
         src="https://images2.imgbox.com/3c/0e/T8iJcSN3_o.png"
       />
     </div>
