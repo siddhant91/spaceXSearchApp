@@ -43,29 +43,49 @@ const Home = () => {
 	 * @param {*} { filterKey, value }
 	 */
 	const updateFilterList = ({ filterKey, value }) => {
-		const selectedFilter = selectedFilters[filterKey];
+		let selectedFilter = selectedFilters[filterKey];
 		if (selectedFilter.length) {
 			const selectedValueIndex = selectedFilter.indexOf(value);
-			// remove the value from the filter list if already selcted
 			if (selectedValueIndex > -1) {
-				selectedFilter.splice(selectedValueIndex, 1);
+				selectedFilter = [];
 			} else {
-				selectedFilter.push(value);
+				selectedFilter = [value];
 			}
-			setSelectecFilters((prevState) => {
-				return {
-					...prevState,
-					[filterKey]: [...selectedFilter],
-				};
-			});
 		} else {
-			setSelectecFilters((prevState) => {
-				return {
-					...prevState,
-					[filterKey]: [value],
-				};
-			});
+			selectedFilter = [value];
 		}
+		setSelectecFilters((prevState) => {
+			return {
+				...prevState,
+				[filterKey]: [...selectedFilter],
+			};
+		});
+		/** the below commented block is to have multiple filter keys for the same category */
+		// const selectedFilter = selectedFilters[filterKey];
+		// if (selectedFilter.length) {
+		// 	const selectedValueIndex = selectedFilter.indexOf(value);
+		// 	//	remove the value from the filter list if already selected
+		// 	if (selectedValueIndex > -1) {
+		// 		selectedFilter.splice(selectedValueIndex, 1);
+		// 	} else {
+		// 		selectedFilter.push(value);
+		// 	}
+
+		// 	setSelectecFilters((prevState) => {
+		// 		return {
+		// 			...prevState,
+		// 			[filterKey]: [...selectedFilter],
+		// 		};
+		// 	});
+		// } else {
+		// 	setSelectecFilters((prevState) => {
+		// 		return {
+		// 			...prevState,
+		// 			[filterKey]: [value],
+		// 		};
+		// 	});
+		// }
+		/** the above commented block is to have multiple filter keys for the same category */
 	};
 
 	/**
